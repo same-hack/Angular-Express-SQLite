@@ -1,0 +1,21 @@
+<div>
+  <button (click)="onFetchAllUsers()">全てのユーザを取得</button>
+  <!-- usersの取得が完了すると表示される -->
+  <ng-container *ngIf="users">
+    <p>すべてのユーザを取得しました！</p>
+    <ul>
+      <li *ngFor="let user of users">
+        id:{{ user.id }} , name: {{ user.name }}
+      </li>
+    </ul>
+  </ng-container>
+</div>
+
+<div>
+  <button (click)="onFetchUserById()">ユーザIDが1のユーザを取得</button>
+  <!-- userの取得が完了すると表示される -->
+  <ng-container *ngIf="user">
+    <p>idが1のユーザを取得しました！</p>
+    <li>id:{{ user.id }} , name: {{ user.name }}</li>
+  </ng-container>
+</div>
